@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f0a9f5d..658603f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -13,7 +13,6 @@ project(FreeLing)
+ set(PACKAGE_NAME "FreeLing") 
+ set(VERSION "4.1") 
+ set(PACKAGE_STRING "\"${PACKAGE_NAME} ${VERSION}\"")
+-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib") # Needed to find libraries if not installed in system path
+ 
+ # Add compiler definitions
+ add_definitions(-DPACKAGE_STRING=${PACKAGE_STRING} -DVERSION=${VERSION})

@@ -1,0 +1,61 @@
+diff --git a/src/libfoma/CMakeLists.txt b/src/libfoma/CMakeLists.txt
+index 8c84783..1b3aac1 100644
+--- a/src/libfoma/CMakeLists.txt
++++ b/src/libfoma/CMakeLists.txt
+@@ -17,7 +17,7 @@ target_include_directories(foma PUBLIC .)
+ install(TARGETS foma
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib/static)
++        ARCHIVE DESTINATION lib)
+ 
+ install(DIRECTORY foma/ DESTINATION include/foma
+         FILES_MATCHING PATTERN "*.h")
+diff --git a/src/libfreeling/CMakeLists.txt b/src/libfreeling/CMakeLists.txt
+index 02283e2..62a0cdd 100644
+--- a/src/libfreeling/CMakeLists.txt
++++ b/src/libfreeling/CMakeLists.txt
+@@ -45,6 +45,6 @@ target_link_libraries(freeling foma treeler ${Boost_LIBRARIES} ${ICU_UC_LIBRARY}
+ install(TARGETS freeling
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib/static)
++        ARCHIVE DESTINATION lib)
+ 
+ 
+diff --git a/src/libtreeler/CMakeLists.txt b/src/libtreeler/CMakeLists.txt
+index ef7250d..8f2f44c 100644
+--- a/src/libtreeler/CMakeLists.txt
++++ b/src/libtreeler/CMakeLists.txt
+@@ -27,7 +27,7 @@ target_include_directories(treeler PUBLIC .) # TODO: Here we are also including
+ install(TARGETS treeler
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib/static)
++        ARCHIVE DESTINATION lib)
+ 
+ #install(DIRECTORY treeler/ DESTINATION include/treeler/
+ #        FILES_MATCHING PATTERN "*.h")
+diff --git a/src/main/CMakeLists.txt b/src/main/CMakeLists.txt
+index 2e0a09c..f6bb792 100644
+--- a/src/main/CMakeLists.txt
++++ b/src/main/CMakeLists.txt
+@@ -40,6 +40,6 @@ endif()
+ install(TARGETS analyzer threaded_analyzer analyzer_client
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib/static)
++        ARCHIVE DESTINATION lib)
+ 
+ 
+diff --git a/src/utilities/CMakeLists.txt b/src/utilities/CMakeLists.txt
+index 2b070e9..d056d5f 100644
+--- a/src/utilities/CMakeLists.txt
++++ b/src/utilities/CMakeLists.txt
+@@ -33,5 +33,5 @@ target_link_libraries(convert_model freeling)
+ install(TARGETS convert_model
+         RUNTIME DESTINATION bin
+         LIBRARY DESTINATION lib
+-        ARCHIVE DESTINATION lib/static)
++        ARCHIVE DESTINATION lib)
+ 

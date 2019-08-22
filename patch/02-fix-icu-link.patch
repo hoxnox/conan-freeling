@@ -1,0 +1,13 @@
+diff --git a/src/libfreeling/CMakeLists.txt b/src/libfreeling/CMakeLists.txt
+index 02283e2..d4c13cc 100644
+--- a/src/libfreeling/CMakeLists.txt
++++ b/src/libfreeling/CMakeLists.txt
+@@ -40,7 +40,7 @@ version.cc util.cc regexp.cc traces.cc language.cc configfile.cc analyzer.cc tok
+ )
+ 
+ add_library(freeling ${freeling_SRCS})
+-target_link_libraries(freeling foma treeler ${Boost_LIBRARIES} ${ICU_UC_LIBRARY})
++target_link_libraries(freeling foma treeler ${Boost_LIBRARIES} ${ICU_I18N_LIBRARY} ${ICU_UC_LIBRARY} ${ICU_DATA_LIBRARY})
+ 
+ install(TARGETS freeling
+         RUNTIME DESTINATION bin

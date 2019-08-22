@@ -1,0 +1,12 @@
+diff --git a/APIs/CMakeLists.txt b/APIs/CMakeLists.txt
+index 3f40058..48068fd 100644
+--- a/APIs/CMakeLists.txt
++++ b/APIs/CMakeLists.txt
+@@ -12,7 +12,6 @@ link_directories(${Boost_LIBRARY_DIRS})
+ link_directories(${ICU_LIBRARY_DIRS})
+ 
+ set (CMAKE_CXX_STANDARD 11)
+-add_definitions( -DBOOST_ALL_NO_LIB  -DBOOST_ALL_DYN_LINK )
+ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+ 
+ if (WIN32)
