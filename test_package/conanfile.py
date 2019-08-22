@@ -11,6 +11,7 @@ class FreelingTestConan(ConanFile):
         cmake = CMake(self)
         # Current dir is "test_package/build/<build_id>" and CMakeLists.txt is
         # in "test_package"
+        cmake.verbose = True
         cmake.configure()
         cmake.build()
 

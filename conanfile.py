@@ -48,6 +48,8 @@ class FreelingConan(NxConanFile):
         self.output.info("cmake  cmd: %s" % cmake.command_line)
         cmake.configure(source_folder=self.fullname)
         cmake.build(target="install")
+        self.copy(dst="lib", src=staging_lib)
 
     def do_package_info(self):
-        self.cpp_info.libs = ["freeling"]
+        self.cpp_info.libs = ["freeling", "foma", "treeler"]
+        # TODO: other data stuff here
