@@ -7,7 +7,7 @@ class FreelingConan(NxConanFile):
     name = "FreeLing"
     version = "4.1"
     fullname = "%s-%s" % (name, version)
-    license = "http://www.gnu.org/licenses/agpl-3.0.html"
+    license = "https://github.com/TALP-UPC/FreeLing/blob/master/COPYING"
     author = "Lluis Padro"
     url = "https://github.com/hoxnox/conan-freeling"
     description = "FreeLing is a C++ library providing language analysis functionalities (morphological analysis, named entity detection, PoS-tagging, parsing, Word Sense Disambiguation, Semantic Role Labelling, etc.) for a variety of languages (English, Spanish, Portuguese, Italian, French, German, Russian, Catalan, Galician, Croatian, Slovene, among others)."
@@ -49,6 +49,9 @@ class FreelingConan(NxConanFile):
         cmake.configure(source_folder=self.fullname)
         cmake.build(target="install")
         self.copy(dst="lib", src=staging_lib)
+
+    def do_package(self):
+            self.copy(pattern="*",        dst="include", src=staging_include)
 
     def do_package_info(self):
         self.cpp_info.libs = ["freeling", "foma", "treeler"]
