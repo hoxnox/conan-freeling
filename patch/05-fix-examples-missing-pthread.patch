@@ -1,0 +1,13 @@
+diff --git a/src/main/CMakeLists.txt b/src/main/CMakeLists.txt
+index 2e0a09c..4238e12 100644
+--- a/src/main/CMakeLists.txt
++++ b/src/main/CMakeLists.txt
+@@ -28,6 +28,8 @@ endif()
+ add_executable(threaded_analyzer sample_analyzer/threaded_analyzer.cc sample_analyzer/config.h)
+ target_link_libraries(threaded_analyzer freeling)
+ 
++find_package(Threads REQUIRED)
++target_link_libraries(threaded_analyzer ${CMAKE_THREAD_LIBS_INIT})
+ 
+ # Install targets
+ if (WIN32)
