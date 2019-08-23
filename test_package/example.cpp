@@ -23,9 +23,9 @@ int
 main(int argc, char* argv[])
 {
 	freeling::util::init_locale(L"default");
-	freeling::tokenizer tk(L"/tmp/freeling/share/freeling/en/tokenizer.dat");
-	freeling::splitter  sp(L"/tmp/freeling/share/freeling/en/splitter.dat");
-	freeling::maco      morfo(my_maco_options(L"en", L"/tmp/freeling/share/freeling/en/"));
+	freeling::tokenizer tk(L"share/freeling/en/tokenizer.dat");
+	freeling::splitter  sp(L"share/freeling/en/splitter.dat");
+	freeling::maco      morfo(my_maco_options(L"en", L"share/freeling/en/"));
 	morfo.set_active_options( //
 		false,                // UserMap
 		true,                 // NumberDetection
@@ -39,7 +39,7 @@ main(int argc, char* argv[])
 		true,                 // NERecognition
 		false,                // QuantitiesDetection
 		true);                // ProbabilityAssignment
-	freeling::hmm_tagger tagger(L"/tmp/freeling/share/freeling/en/tagger.dat", true, FORCE_TAGGER);
+	freeling::hmm_tagger tagger(L"share/freeling/en/tagger.dat", true, FORCE_TAGGER);
 
 	wstring              text = L"Dynamic authorization failed for device.";
 	list<freeling::word> lw   = tk.tokenize(text);
